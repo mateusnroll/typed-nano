@@ -1,4 +1,4 @@
-declare namespace nano {
+declare module 'nano' {
 
   interface NanoDatabase {
     create(databaseName: String, callback: (error, result) => void): void;
@@ -87,5 +87,3 @@ declare namespace nano {
   export function updates(params: Object, callback: (error, results) => void): void;
 
 }
-
-export = nano;
