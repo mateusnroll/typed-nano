@@ -1,5 +1,8 @@
 declare module 'nano' {
 
+  function nano(connectionUrl: string): NanoDatabase;
+  export = nano;
+
   interface NanoDatabase {
     create(databaseName: String, callback: (error, result) => void): void;
 
@@ -71,19 +74,4 @@ declare module 'nano' {
 
     get(documentId: String, attachmentName: String, params: Object, callback?: (error, results) => void): void;
   }
-
-  /** --- EXPORTS --- */
-
-  export let db:NanoDatabase;
-
-  export function request(params: Object, callback: (error, results) => void): void;
-
-  export function relax(params: Object, callback: (error, results) => void): void;
-
-  export function dinosaur(params: Object, callback: (error, results) => void): void;
-
-  export function config(params: Object): Object; // Not sure
-
-  export function updates(params: Object, callback: (error, results) => void): void;
-
 }
