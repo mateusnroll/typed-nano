@@ -4,47 +4,47 @@ declare module 'nano' {
   export = nano;
 
   interface NanoDatabase {
-    create(databaseName: String, callback: (error, result) => void): void;
+    create(databaseName: string, callback: (error, result) => void): void;
 
-    get(databaseName: String, callback: (error, result) => void): void;
+    get(databaseName: string, callback: (error, result) => void): void;
 
-    destroy(databaseName: String, callback?: (error, result) => void): void;
+    destroy(databaseName: string, callback?: (error, result) => void): void;
 
     list(callback: (error, result) => void): void;
 
-    compact(databaseName: String, designDocName?: String, callback?: (error, result) => void): void;
+    compact(databaseName: string, designDocName?: string, callback?: (error, result) => void): void;
 
-    replicate(sourceDatabaseName: String, targetDatabaseUrl: String, params?: Object, callback?: (error, result) => void): void;
+    replicate(sourceDatabaseName: string, targetDatabaseUrl: string, params?: Object, callback?: (error, result) => void): void;
 
-    changes(databaseName: String, params: Object, callback: (error, result) => void): void;
+    changes(databaseName: string, params: Object, callback: (error, result) => void): void;
 
-    follow(databaseName: String, params: Object, callback: (error, result) => void): void;
+    follow(databaseName: string, params: Object, callback: (error, result) => void): void;
 
     info(callback: (error, result) => void): void;
 
-    use(databaseName: String): NanoDocument;
+    use(databaseName: string): NanoDocument;
 
-    scope(databaseName: String): NanoDocument;
+    scope(databaseName: string): NanoDocument;
   }
 
   interface NanoDocument {
-    insert(doc: Object, params: String | Object, callback: (error, result) => void): void;
+    insert(doc: Object, params: string | Object, callback: (error, result) => void): void;
 
-    destroy(id: String, rev: String, callback: (error, result) => void): void;
+    destroy(id: string, rev: string, callback: (error, result) => void): void;
 
-    get(id: String, params: Object, callback: (error, result) => void): void;
+    get(id: string, params: Object, callback: (error, result) => void): void;
 
-    head(id: String, callback: (error, meta, headers) => void): void;
+    head(id: string, callback: (error, meta, headers) => void): void;
 
     copy(sourceDocId: string, destinationDocId: string, params: Object, callback: (error, meta, headers) => void ): void;
 
-    bulk(documents: [Object], params: Object, callback: (error, results) => void): void;
+    bulk(documents: Object[], params: Object, callback: (error, results) => void): void;
 
     list(params: Object, callback: (error, results) => void): void;
 
-    fetch(documentIds: [String], params: Object, callback: (error, results) => void): void;
+    fetch(documentIds: string[], params: Object, callback: (error, results) => void): void;
 
-    fetchRevs(documentIds: [String], params: Object, callback: (error, results) => void): void;
+    fetchRevs(documentIds: string[], params: Object, callback: (error, results) => void): void;
 
     multipart: NanoMultipart;
 
@@ -52,26 +52,26 @@ declare module 'nano' {
 
     /** VIEWS */
 
-    view(designDocumentId: String, viewName: String, params: Object, callback: (error, results) => void): void;
+    view(designDocumentId: string, viewName: string, params: Object, callback: (error, results) => void): void;
 
-    viewWithList(designDocumentId: String, viewName: String, params: Object, callback: (error, results) => void): void;
+    viewWithList(designDocumentId: string, viewName: string, params: Object, callback: (error, results) => void): void;
 
-    show(designDocumentId: String, showDocumentName: String, documentId: String, params: Object, callback: (error, results) => void): void;
+    show(designDocumentId: string, showDocumentName: string, documentId: string, params: Object, callback: (error, results) => void): void;
 
-    atomic(designDocumentId: String, updateName: String, documentId: String, updateBody: Object, callback: (error, results) => void): void;
+    atomic(designDocumentId: string, updateName: string, documentId: string, updateBody: Object, callback: (error, results) => void): void;
 
-    search(designDocumentId: String, searchName: String, params: Object, callback: (error, results) => void): void;
+    search(designDocumentId: string, searchName: string, params: Object, callback: (error, results) => void): void;
   }
 
   interface NanoMultipart {
-    insert(document: Object, attachments: [Object], params: Object, callback: (error, results) => void): void;
+    insert(document: Object, attachments: Object[], params: Object, callback: (error, results) => void): void;
 
-    get(documentId: String, params: Object, callback: (error, results) => void): void;
+    get(documentId: string, params: Object, callback: (error, results) => void): void;
   }
 
   interface NanoAttachment {
-    insert(documentId: String, attachmentName: String, attachmentData: any, contentType: String, params: Object, callback: (error, results) => void): void;
+    insert(documentId: string, attachmentName: string, attachmentData: any, contentType: string, params: Object, callback: (error, results) => void): void;
 
-    get(documentId: String, attachmentName: String, params: Object, callback?: (error, results) => void): void;
+    get(documentId: string, attachmentName: string, params: Object, callback: (error, results) => void): void;
   }
 }
