@@ -1,6 +1,6 @@
 {
   "name": "typed-nano",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Typings for nano",
   "main": "lib/nano.d.ts",
   "repository": {
