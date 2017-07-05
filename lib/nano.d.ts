@@ -61,6 +61,8 @@ declare module 'nano' {
     atomic(designDocumentId: string, updateName: string, documentId: string, updateBody: Object, callback: (error, results) => void): void;
 
     search(designDocumentId: string, searchName: string, params: Object, callback: (error, results) => void): void;
+
+    find(selector: Object, callback: (error, results) => void): void;
   }
 
   interface NanoMultipart {
