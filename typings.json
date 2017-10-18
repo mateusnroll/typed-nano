@@ -2,7 +2,7 @@
   "name": "nano",
   "main": "lib/nano.d.ts",
   "homepage": "http://github.com/dscape/nano",
-  "version": "6.2.0",
+  "version": "6.4.0",
   "globalDevDependencies": {
     "node": "registry:env/node#6.0.0+20160723033700"
   },
